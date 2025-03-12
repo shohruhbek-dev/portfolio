@@ -1,15 +1,124 @@
 
 import clsx from "clsx";
 import cn from "./style.module.scss"
+import Dropdown from "../../components/dropdown";
 
 
 function About() {
     return (
-        <div className={clsx(cn["about"])}>
-          <h1>About</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente tenetur, doloribus illum suscipit explicabo provident sit facere assumenda officiis, corrupti temporibus ut, pariatur delectus beatae officia. Ab, accusantium debitis consequatur ullam possimus omnis voluptatibus quas saepe sint laudantium sit officiis blanditiis deserunt dolorum! Alias ducimus dolore nobis non in sunt repellendus placeat necessitatibus magni! Tempora iure ad alias! Amet est quod, eum beatae minus quia atque, voluptatum blanditiis commodi earum fugiat consectetur, repudiandae necessitatibus. Odit neque aspernatur harum praesentium nam, doloremque earum aliquam dicta, natus, cum mollitia maiores voluptas similique tempore nobis quisquam amet odio voluptates provident corporis. Modi, reprehenderit.</p>
+
+        <div className={clsx(cn["aboutt"])}>
+
+            <div className={clsx(cn["aboutBAr"])}>
+                <Dropdown mainText={<><i className="fa-solid fa-caret-down"></i> personal-info</>} dropdownItems={[
+                    <p>bio</p>,
+                    <p>interests</p>,
+                    <>
+                        <Dropdown mainText={<><i className="fa-solid fa-caret-down"></i>education</>} dropdownItems={[
+                            <p><i className="fa-solid fa-envelope"></i>high-school</p>,
+                            <p><i className="fa-solid fa-phone"></i>university</p>
+                        ]} />
+                    </>
+                ]}>
+                </Dropdown>
+                <Dropdown mainText={<><i className="fa-solid fa-caret-down"></i> contacts</>} dropdownItems={[
+                    <a href="#"><i className="fa-solid fa-envelope"></i> user@gmail.com</a>,
+                    <a href="#"><i className="fa-solid fa-phone"></i> +3598246359</a>,
+
+                ]}></Dropdown>
+            </div>
+            <div className={clsx(cn["abouttop"])}>
+
+                <p>
+
+
+
+                </p>
+
+            </div>
+            <div className={clsx(cn["aboutCenter1"])}>
+                <span> 1    /** </span>
+                <span> 2    * About me </span>
+                <span> 3    * I have 5 years of еxperience in web </span>
+                <span> 4    * development lorem ipsum dolor sit amet, </span>
+                <span> 5    * consectetur adipiscing elit, sed do eiusmod </span>
+                <span> 6    * tempor incididunt ut labore et dolore </span>
+                <span> 7    * magna aliqua. Ut enim ad minim veniam, </span>
+                <span> 8    * quis nostrud exercitation ullamco laboris </span>
+                <span> 9    * nisi ut aliquip ex ea commodo consequat. </span>
+                <span> 10   * Duis aute irure dolor in reprehenderit in </span>
+                <span> 11   * </span>
+                <span> 12   * Duis aute irure dolor in reprehenderit in </span>
+                <span> 13   * voluptate velit esse cillum dolore eu fugiat </span>
+                <span> 14   * nulla pariatur. Excepteur sint occaecat </span>
+                <span> 15   * officia deserunt mollit anim id est laborum. </span>
+                <span> 16   */ </span>
+            </div>
+            <div className={clsx(cn["aboutCenter2"])}>
+                <p>// Code snippet showcase:</p>
+
+                <div className={clsx(cn["aboutCenter2Sec"])} >
+
+                    <div>
+                        <div className={clsx(cn["aboutCenter2Sec2Img"])}>
+                            <img src="" alt="" />
+                            <div>
+                                <p>@username</p>
+                                <p>Created 5 months ago</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p><i class="fa-solid fa-comment"></i>  details</p>
+                            <p> <i class="fa-solid fa-star"></i>  3 starts</p>
+
+                        </div>
+                    </div>
+                    <div>
+                        <p>{`function initializeModelChunk<T>(chunk: ResolvedModelChunk): T {
+                                    const value: T = parseModel(chunk._response, chunk._value);
+                                    const initializedChunk: InitializedChunk<T> = (chunk: any);
+                                    initializedChunk._status = INITIALIZED;
+                                    initializedChunk._value = value;
+                                    return value;
+                                    }`}
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div className={clsx(cn["aboutCenter2Sec2"])} >
+
+                    <div>
+                        <div className={clsx(cn["aboutCenter2Sec2Img"])}>
+                            <img src="" alt="" />
+                            <div>
+                                <p>@username</p>
+                                <p>Created 5 months ago</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p><i class="fa-solid fa-comment"></i>  details</p>
+                            <p> <i class="fa-solid fa-star"></i>  0 starts</p>
+
+                        </div>
+                    </div>
+                    <div>
+                        <p>{`export function parseModelTuple(
+  response: Response,
+  value: {+[key: string]: JSONValue} | $ReadOnlyArray<JSONValue>,
+): any {
+  const tuple: [mixed, mixed, mixed, mixed] = (value: any);
+                                    }`}
+                        </p>
+                    </div>
+
+                </div>
+            </div>
         </div>
     );
+
 }
 
 export default About;
