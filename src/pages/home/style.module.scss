@@ -1,0 +1,74 @@
+.home {
+    display: flex;
+    justify-content: center;
+    text-align: start;
+   
+    height: 100vh;
+
+    .homeText {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: start;
+        justify-content: center;
+        text-align: start;
+
+        p {
+            text-align: start;
+
+            color: #E5E9F0;
+            font-size: 18px;
+            font-weight: 450;
+        }
+
+        h1 {
+            color: #E5E9F0;
+            font-size: 62px;
+            font-weight: 300;
+        }
+
+        h3 {
+            color: #4D5BCE;
+            font-size: 32px;
+            font-weight: 450;
+        }
+
+        .homeTextGit {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            gap: 10px;
+
+            p {
+                color: #607B96;
+                font-size: 16px;
+                font-weight: 450;
+            }
+
+            .homeTextGitLink {
+                color: white;
+
+                a {
+                    color: #E99287;
+
+                }
+
+                span {
+                    color: white;
+
+                    font-weight: 500;
+                    // color: #4D5BCE;
+
+                    &:nth-child(1) {
+                        color: #4D5BCE;
+                    }
+
+                    &:nth-child(2) {
+                        color: #42D7AC;
+                    }
+
+                }
+            }
+        }
+    }
+}

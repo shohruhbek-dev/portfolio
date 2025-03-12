@@ -1,0 +1,15 @@
+.footer{
+    background-color: #1E2D3D ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    .footerAll{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+  
+}
