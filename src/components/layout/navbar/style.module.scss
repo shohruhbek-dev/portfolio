@@ -5,49 +5,133 @@
 
 ul {
     list-style: none;
-
+    padding: 0;
+    margin: 0;
 }
 
 .header {
     color: white;
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #1E2D3D;
-    padding: 20px 15px;
+    background-color: #011627;
     border-bottom: 1px solid #1E2D3D;
+    padding: 0 20px;
+    position: relative;
+    z-index: 50;
+
+    .menu-toggle {
+        display: none;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        z-index: 60;
+    }
 
     .headerinfo {
-        width: 60%;
         display: flex;
         align-items: center;
-        // justify-content: space-between;
         gap: 10px;
+        // width: 100%;
+
+     
 
         div {
-            width: 30%;
             font-size: 16px;
             font-weight: 450;
             color: #607B96;
-            border-right: 1px solid white;
+
         }
 
         ul {
             display: flex;
-            gap: 10px;
 
             li {
                 font-size: 16px;
                 font-weight: 450;
                 color: white;
-                padding: 0 30px;
-
-
-             
-                    border-right: 1px solid white;
-               
+                padding: 15px 30px;
+                border-right: 1px solid #1E2D3D;
+                border-left: 1px solid #1E2D3D;
             }
         }
     }
 
+    .headerContacts {
+        padding: 0 10px;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .menu-toggle {
+            display: block;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+
+        .headerinfo {
+            font-size: 16px;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px;
+
+            ul {
+                display: none;
+                flex-direction: column;
+                width: auto;
+                height: auto;
+                background-color: #011627;
+                position: absolute;
+                top: 40px;
+                left: 0;
+                width: 100%;
+                // padding: 0px 0;
+                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+
+                li {
+                    width: 100%;
+                    text-align: center;
+                    padding: 20px 0;
+                    border: none;
+                    border-bottom: 1px solid #1E2D3D;
+                }
+            }
+
+            // Makes menu visible when open
+            ul.open {
+                display: flex;
+            }
+        }
+
+        // Hide contact link outside menu
+        .headerContacts {
+            display: none;
+        }
+
+        // Show _contact-me inside menu when open
+        .headerinfoUl.open {
+            display: flex;
+
+            &::after {
+                content: "";
+                display: block;
+                height: 10px;
+            }
+
+            .headerContacts {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+                border-top: 1px solid #1E2D3D;
+            }
+        }
+    }
 }

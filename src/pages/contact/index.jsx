@@ -26,12 +26,12 @@ function Contact() {
                     <a href="#"><i className="fa-solid fa-up-right-from-square"></i> Twitch profile</a>,
                 ]}></Dropdown>
             </div>
-            <div className={clsx(cn["contacttop"])}> <h1>contacttop</h1></div>
+            <div className={clsx(cn["contacttop"])}> <p>contacts</p></div>
             <div className={clsx(cn["contactCenter1"])}>
             <MessageCard formData={formData} setFormData={setFormData} />
             </div>
             <div className={clsx(cn["contactCenter2"])}>
-                <h1>contactCenter2</h1>
+                
                 <ShowMessage formData={formData}   />
             </div>
         </div>

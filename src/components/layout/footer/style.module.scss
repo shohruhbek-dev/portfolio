@@ -1,15 +1,41 @@
-.footer{
-    background-color: #1E2D3D ;
+.footer {
+    background-color: #011627;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 15px;
-    .footerAll{
+    color: #607B96;
+    padding: 0 15px;
+    // z-index: 20;
+    border: 1px solid #1E2D3D;
+
+
+    .footerAll {
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        // gap: 10px;
+        color: #607B96;
+
+        p {
+            margin-right: 10px;
+        }
+
+        a {
+            color: #607B96;
+            border-right: 1px solid #1E2D3D;
+            border-left: 1px solid #1E2D3D;
+            padding: 15px;
+
+        }
     }
 
-  
+    .footerGit {
+
+        p {
+            padding: 0 10px ;
+
+        }
+    }
+
+
 }

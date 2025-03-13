@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import cn from "./style.module.scss";
 import clsx from "clsx";
 
 const MessageCard = ({ formData, setFormData }) => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -21,13 +23,21 @@ const MessageCard = ({ formData, setFormData }) => {
       email: "",
       message: "",
     });
+
+    // Show success message
+    setIsSubmitted(true);
+
+    // Hide success message after 3 seconds
+    setTimeout(() => {
+      setIsSubmitted(false);
+    }, 3000);
   };
 
   return (
     <div className={cn.messageCard}>
       <form onSubmit={handleSubmit} className={cn.form}>
         <div className={cn.formGroup}>
-          <label htmlFor="name" className={cn.label}>Name:</label>
+          <label htmlFor="name" className={cn.label}>_name:</label>
           <input
             type="text"
             id="name"
@@ -38,7 +48,7 @@ const MessageCard = ({ formData, setFormData }) => {
           />
         </div>
         <div className={cn.formGroup}>
-          <label htmlFor="email" className={cn.label}>Email:</label>
+          <label htmlFor="email" className={cn.label}>_email:</label>
           <input
             type="email"
             id="email"
@@ -49,7 +59,7 @@ const MessageCard = ({ formData, setFormData }) => {
           />
         </div>
         <div className={cn.formGroup}>
-          <label htmlFor="message" className={cn.label}>Message:</label>
+          <label htmlFor="message" className={cn.label}>_message:</label>
           <textarea
             id="message"
             name="message"
@@ -58,8 +68,9 @@ const MessageCard = ({ formData, setFormData }) => {
             className={clsx(cn.textarea, { [cn.inputFilled]: formData.message })}
           />
         </div>
-        <button type="submit" className={cn.button}>Submit</button>
+        <button type="submit" className={cn.button}>submit-message</button>
       </form>
+      {isSubmitted && <div className={cn.successMessage}>Form submitted successfully!</div>}
     </div>
   );
 };

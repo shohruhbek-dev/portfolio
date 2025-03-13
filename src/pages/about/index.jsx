@@ -2,21 +2,26 @@
 import clsx from "clsx";
 import cn from "./style.module.scss"
 import Dropdown from "../../components/dropdown";
+import { useEffect } from "react";
 
-
+import Prism from "prismjs"; // If using Prism.js for syntax highlighting
+import "prismjs/themes/prism-tomorrow.css";
 function About() {
+    useEffect(() => {
+        Prism.highlightAll(); // Apply syntax highlighting after render
+    }, []);
     return (
 
-        <div className={clsx(cn["aboutt"])}>
+        <div className={clsx(cn["about"])}>
 
             <div className={clsx(cn["aboutBAr"])}>
                 <Dropdown mainText={<><i className="fa-solid fa-caret-down"></i> personal-info</>} dropdownItems={[
-                    <p>bio</p>,
-                    <p>interests</p>,
+                    <p><i class="fa-solid fa-file"></i> bio</p>,
+                    <p> <i class="fa-solid fa-file"></i> interests</p>,
                     <>
-                        <Dropdown mainText={<><i className="fa-solid fa-caret-down"></i>education</>} dropdownItems={[
-                            <p><i className="fa-solid fa-envelope"></i>high-school</p>,
-                            <p><i className="fa-solid fa-phone"></i>university</p>
+                        <Dropdown mainText={<><i className="fa-solid fa-caret-down"></i>  education</>} dropdownItems={[
+                            <p><i class="fa-solid fa-file"></i> high-school</p>,
+                            <p><i class="fa-solid fa-file"></i>  university</p>
                         ]} />
                     </>
                 ]}>
@@ -30,7 +35,7 @@ function About() {
             <div className={clsx(cn["abouttop"])}>
 
                 <p>
-
+                    personal-info
 
 
                 </p>
@@ -55,63 +60,70 @@ function About() {
                 <span> 16   */ </span>
             </div>
             <div className={clsx(cn["aboutCenter2"])}>
-                <p>// Code snippet showcase:</p>
+                <p className={clsx(cn["aboutCenterp"])}>// Code snippet showcase:</p>
 
                 <div className={clsx(cn["aboutCenter2Sec"])} >
 
-                    <div>
+                    <div className={clsx(cn["aboutCenter2SecProfile"])}>
                         <div className={clsx(cn["aboutCenter2Sec2Img"])}>
-                            <img src="" alt="" />
+                            <img src="/src/assets/profile.png" alt="" />
                             <div>
-                                <p>@username</p>
+                                <span>@username</span>
                                 <p>Created 5 months ago</p>
                             </div>
                         </div>
 
-                        <div>
+                        <div className={clsx(cn["aboutCenter2Sec2detail"])}>
                             <p><i class="fa-solid fa-comment"></i>  details</p>
                             <p> <i class="fa-solid fa-star"></i>  3 starts</p>
 
                         </div>
                     </div>
-                    <div>
-                        <p>{`function initializeModelChunk<T>(chunk: ResolvedModelChunk): T {
-                                    const value: T = parseModel(chunk._response, chunk._value);
-                                    const initializedChunk: InitializedChunk<T> = (chunk: any);
-                                    initializedChunk._status = INITIALIZED;
-                                    initializedChunk._value = value;
-                                    return value;
-                                    }`}
-                        </p>
+
+                    <div className={clsx(cn["aboutCenter2Sec2Code"])}>
+                        <pre>
+                            <code className="language-javascript">
+                                {`function initializeModelChunk<T>(chunk: ResolvedModelChunk): T {
+    const value: T = parseModel(chunk._response, chunk._value);
+    const initializedChunk: InitializedChunk<T> = (chunk: any);
+    initializedChunk._status = INITIALIZED;
+    initializedChunk._value = value;
+    return value;
+}`}
+                            </code>
+                        </pre>
                     </div>
                 </div>
 
-                
-                <div className={clsx(cn["aboutCenter2Sec2"])} >
 
-                    <div>
+                <div className={clsx(cn["aboutCenter2Sec"])} >
+
+                    <div className={clsx(cn["aboutCenter2SecProfile"])}>
                         <div className={clsx(cn["aboutCenter2Sec2Img"])}>
-                            <img src="" alt="" />
+                            <img src="/src/assets/profile.png" alt="" />
                             <div>
-                                <p>@username</p>
+                                <span>@username</span>
                                 <p>Created 5 months ago</p>
                             </div>
                         </div>
 
-                        <div>
+                        <div className={clsx(cn["aboutCenter2Sec2detail"])} >
                             <p><i class="fa-solid fa-comment"></i>  details</p>
                             <p> <i class="fa-solid fa-star"></i>  0 starts</p>
 
                         </div>
                     </div>
-                    <div>
-                        <p>{`export function parseModelTuple(
+                    <div className={clsx(cn["aboutCenter2Sec2Code"])}>
+                        <pre>
+                            <code className="language-javascript">
+                                {`export function parseModelTuple(
   response: Response,
   value: {+[key: string]: JSONValue} | $ReadOnlyArray<JSONValue>,
 ): any {
   const tuple: [mixed, mixed, mixed, mixed] = (value: any);
-                                    }`}
-                        </p>
+}`}
+                            </code>
+                        </pre>
                     </div>
 
                 </div>

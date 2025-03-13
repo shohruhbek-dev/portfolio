@@ -1,0 +1,27 @@
+.previewSection {
+    background-color: #011627;
+    color: #d6deeb;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: "Fira Code", monospace;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    color: #82aaff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+pre {
+    background-color: #011221;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: "Fira Code", monospace;
+    font-size: 14px;
+    color: #d6deeb;
+}

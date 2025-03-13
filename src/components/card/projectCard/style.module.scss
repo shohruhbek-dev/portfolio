@@ -1,0 +1,70 @@
+.projectCard {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    // background-color: red;
+    padding: 10px;
+
+
+    .projectCardTitle {
+        font-size: 16px;
+        font-weight: 450;
+        color: #607B96;
+    }
+
+    .projectCardContainer {
+        display: flex;
+        border-radius: 15px;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+        background-color: #011221;
+
+        .projectCardImage {
+            width: 100%;
+
+            img {
+                width: 100%;
+                // border-radius: 15px;
+            }
+        }
+
+        .projectCardContent {
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: start;
+            padding: 10px;
+
+            span {
+                font-size: 16px;
+                font-weight: 7000;
+                color: #5565E8;
+            }
+
+            .projectCardDescription {
+                font-size: 18px;
+                font-weight: 450;
+                color: #607B96;
+            }
+
+            .projectCardLink {
+                background-color: #1C2B3A;
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+        }
+
+        span {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+
+    }
+}

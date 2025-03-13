@@ -1,9 +1,17 @@
 .home {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: start;
-   
+    align-items: center;
     height: 100vh;
+    flex-direction: row;
+
+    @media (max-width: 768px) {
+        height: auto;
+        padding: 40px 0;
+        gap: 40px;
+        flex-direction: column;
+    }
 
     .homeText {
         display: flex;
@@ -15,7 +23,6 @@
 
         p {
             text-align: start;
-
             color: #E5E9F0;
             font-size: 18px;
             font-weight: 450;
@@ -50,14 +57,11 @@
 
                 a {
                     color: #E99287;
-
                 }
 
                 span {
                     color: white;
-
                     font-weight: 500;
-                    // color: #4D5BCE;
 
                     &:nth-child(1) {
                         color: #4D5BCE;
@@ -66,7 +70,6 @@
                     &:nth-child(2) {
                         color: #42D7AC;
                     }
-
                 }
             }
         }

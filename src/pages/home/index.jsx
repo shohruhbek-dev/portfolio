@@ -1,6 +1,7 @@
 
 import clsx from "clsx";
 import cn from "./style.module.scss"
+import SnakeGame from "../../components/game";
 
 
 function Home() {
@@ -17,12 +18,12 @@ function Home() {
                         <span>const </span>
                         <span>githubLink</span>
                         <span> = </span>
-                        <a target="_blank" href="https://github.com/shohruhbek-dev">"https://github.com/shohruhbek-dev"</a></div>
+                        <a target="_blank" href="https://github.com/example/url">"https://github.com/example/url"</a></div>
                 </div>
             </div>
             <div className={clsx(cn["homeGame"])}>
 
-
+                <SnakeGame />
             </div>
         </div>
     );

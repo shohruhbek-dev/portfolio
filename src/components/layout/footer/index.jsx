@@ -13,7 +13,7 @@ function Footer() {
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
             </div>
             <div className={clsx(cn["footerGit"])}>
-                <p>shohruhbek-dev<i class="fa-brands fa-github"></i>
+                <p>shohruhbek-dev  <i class="fa-brands fa-github"></i>
                 </p>
             </div>
 
