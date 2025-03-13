@@ -5,10 +5,11 @@
     grid-template-rows: auto 94%;
     // gap: 20px;
     height: 100vh;
-    // justify-content: space-between;
+    justify-content: space-between;
 
     .contactLeftBAr {
         border: 1px solid #1E2D3D;
+       
         grid-column: 1 / 2;
         grid-row: 1 / 3;
         display: flex;
@@ -64,38 +65,40 @@
         grid-row: 2 / 3;
     }
 
-    @media (max-width: 1024px) {
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto auto;
-        height: auto;
+    // @media (max-width: 1024px) {
+    //     grid-template-columns: auto;
+    //     grid-template-rows: auto auto auto auto;
+    //     height: auto;
 
-        .contactLeftBAr {
-            grid-column: 1 / 2;
-            grid-row: 1 / 2;
-            width: auto;
-            border-bottom: 1px solid #1E2D3D;
-            border-right: none;
-        }
+    //     .contactLeftBAr {
+    //         grid-column: 1 / 2;
+    //         grid-row: 1 / 2;
+    //         width: auto;
+    //         border-bottom: 1px solid #1E2D3D;
+    //         border-right: none;
+    //         // align-items: start;
+    //         // justify-content: start  ;
+    //     }
 
-        .contacttop {
-            grid-column: 1 / 2;
-            grid-row: 2 / 3;
-            width: auto;
-            border-bottom: 1px solid #1E2D3D;
-        }
+    //     .contacttop {
+    //         grid-column: 1 / 2;
+    //         grid-row: 2 / 3;
+    //         width: auto;
+    //         border-bottom: 1px solid #1E2D3D;
+    //     }
 
-        .contactCenter1 {
-            grid-column: 1 / 2;
-            grid-row: 3 / 4;
-            width: auto;
-        }
+    //     .contactCenter1 {
+    //         grid-column: 1 / 2;
+    //         grid-row: 3 / 4;
+    //         width: auto;
+    //     }
 
-        .contactCenter2 {
-            grid-column: 1 / 2;
-            grid-row: 4 / 5;
-            width: auto;
-        }
-    }
+    //     .contactCenter2 {
+    //         grid-column: 1 / 2;
+    //         grid-row: 4 / 5;
+    //         width: auto;
+    //     }
+    // }
 
     @media (max-width: 768px) {
         display: flex;
@@ -107,7 +110,7 @@
             border-bottom: 1px solid #1E2D3D;
             flex-direction: row;
             justify-content: space-between;
-            align-items: center;
+            align-items: start;
             padding: 10px;
         }
 

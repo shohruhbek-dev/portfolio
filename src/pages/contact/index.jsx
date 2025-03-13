@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import cn from "./style.module.scss"
-import Dropdown from "../../components/dropdown";
 import MessageCard from "../../components/section/messagePut";
 import ShowMessage from "../../components/section/showMessage";
+import Dropdown from "../../components/card/dropdown";
 
 
 function Contact() {
@@ -28,11 +28,11 @@ function Contact() {
             </div>
             <div className={clsx(cn["contacttop"])}> <p>contacts</p></div>
             <div className={clsx(cn["contactCenter1"])}>
-            <MessageCard formData={formData} setFormData={setFormData} />
+                <MessageCard formData={formData} setFormData={setFormData} />
             </div>
             <div className={clsx(cn["contactCenter2"])}>
-                
-                <ShowMessage formData={formData}   />
+
+                <ShowMessage formData={formData} />
             </div>
         </div>
     );

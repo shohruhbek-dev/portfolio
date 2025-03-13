@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import cn from "./style.module.scss";
 
 const GRID_SIZE = 20;
-const SQUARE_SIZE = 20;
 const INITIAL_SNAKE = [{ x: 10, y: 10 }];
 const INITIAL_DIRECTION = { x: 1, y: 0 };
 const INITIAL_FOOD = { x: 5, y: 5 };
@@ -13,16 +12,18 @@ const SnakeGame = () => {
   const [direction, setDirection] = useState(INITIAL_DIRECTION);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
+  const [gameStarted, setGameStarted] = useState(false);
   const gameLoop = useRef(null);
 
   useEffect(() => {
+    if (!gameStarted) return;
     document.addEventListener("keydown", handleKeyPress);
     gameLoop.current = setInterval(moveSnake, 200);
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
       clearInterval(gameLoop.current);
     };
-  }, [snake]);
+  }, [snake, gameStarted]);
 
   const handleKeyPress = (event) => {
     switch (event.key) {
@@ -49,9 +50,14 @@ const SnakeGame = () => {
     const head = { ...newSnake[0] };
     head.x += direction.x;
     head.y += direction.y;
-    
-    if (head.x < 0 || head.y < 0 || head.x >= GRID_SIZE || head.y >= GRID_SIZE ||
-        newSnake.some(segment => segment.x === head.x && segment.y === head.y)) {
+
+    if (
+      head.x < 0 ||
+      head.y < 0 ||
+      head.x >= GRID_SIZE ||
+      head.y >= GRID_SIZE ||
+      newSnake.some((segment) => segment.x === head.x && segment.y === head.y)
+    ) {
       setGameOver(true);
       clearInterval(gameLoop.current);
       return;
@@ -61,7 +67,7 @@ const SnakeGame = () => {
     if (head.x === food.x && head.y === food.y) {
       setFood({
         x: Math.floor(Math.random() * GRID_SIZE),
-        y: Math.floor(Math.random() * GRID_SIZE)
+        y: Math.floor(Math.random() * GRID_SIZE),
       });
       setScore(score + 1);
     } else {
@@ -70,29 +76,41 @@ const SnakeGame = () => {
     setSnake(newSnake);
   };
 
-  const resetGame = () => {
+  const startGame = () => {
+    setGameStarted(true);
+    setGameOver(false);
     setSnake(INITIAL_SNAKE);
     setDirection(INITIAL_DIRECTION);
     setFood(INITIAL_FOOD);
     setScore(0);
+  };
+
+  const resetGame = () => {
+    setGameStarted(false);
     setGameOver(false);
-    gameLoop.current = setInterval(moveSnake, 200);
+    setSnake(INITIAL_SNAKE);
+    setDirection(INITIAL_DIRECTION);
+    setFood(INITIAL_FOOD);
+    setScore(0);
   };
 
   return (
     <div className={cn.snakeGameContainer}>
       <h3>Snake Game</h3>
       <p>Score: {score}</p>
+      {!gameStarted && <button onClick={startGame}>Start Game</button>}
       <div className={cn.grid}>
         {Array.from({ length: GRID_SIZE }).map((_, row) => (
           <div key={row} className={cn.row}>
             {Array.from({ length: GRID_SIZE }).map((_, col) => {
-              let isSnake = snake.some(segment => segment.x === col && segment.y === row);
+              let isSnake = snake.some((segment) => segment.x === col && segment.y === row);
               let isFood = food.x === col && food.y === row;
               return (
-                <div key={col} className={cn.cell} style={{
-                  backgroundColor: isSnake ? "lime" : isFood ? "red" : "black",
-                }}></div>
+                <div
+                  key={col}
+                  className={cn.cell}
+                  style={{ backgroundColor: isSnake ? "lime" : isFood ? "red" : "black" }}
+                ></div>
               );
             })}
           </div>

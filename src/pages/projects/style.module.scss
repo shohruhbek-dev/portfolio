@@ -2,10 +2,11 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 25% 70%;
-    grid-template-rows: 6% 94%;
-
+    grid-template-rows: 4% 96%;
+    // justify-content: space-between;
     color: white;
     border: 1px solid #1E2D3D;
+    background-color: #011627;
 
     .ProjectsLeftBAr {
         color: white;
@@ -51,6 +52,7 @@
         border: 1px solid #1E2D3D;
         text-align: start;
         display: flex;
+        width: 100%;
         align-items: center;
         justify-content: start;
 
@@ -67,11 +69,15 @@
     }
 
     .projectsCenter {
+        width: 100%;
         grid-column: 2 / 3;
         grid-row: 2 / 3;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin: auto;
+        gap: 10px;
+        padding-left: 20px;
 
         span {
             font-size: 16px;

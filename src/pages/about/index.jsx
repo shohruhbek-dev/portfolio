@@ -1,13 +1,13 @@
 
 import clsx from "clsx";
 import cn from "./style.module.scss"
-import Dropdown from "../../components/dropdown";
 import { useEffect } from "react";
-import Prism from "prismjs"; 
+import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
+import Dropdown from "/src/components/card/dropdown";
 function About() {
     useEffect(() => {
-        Prism.highlightAll(); 
+        Prism.highlightAll();
     }, []);
     return (
 
@@ -35,8 +35,6 @@ function About() {
 
                 <p>
                     personal-info
-
-
                 </p>
 
             </div>

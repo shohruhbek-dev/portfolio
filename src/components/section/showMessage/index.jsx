@@ -19,7 +19,7 @@ const message = {
     name: "${formData.name || "______"}",
     email: "${formData.email || "________"}",
     message: "${formData.message || "_______"}",
-    date: "Thu 21 Apr"
+    date: "Thu 13 March"
 }
 
 button.addEventListener('click', () => {

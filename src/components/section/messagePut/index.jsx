@@ -67,7 +67,7 @@ const MessageCard = ({ formData, setFormData }) => {
         </div>
         <button type="submit" className={cn.button}>submit-message</button>
       </form>
-      {isSubmitted && <div className={cn.successMessage}>Form submitted successfully!</div>}
+      {isSubmitted && <div className={cn.successMessage}><h1>Thank you! 🤘</h1> <p>Your message has been accepted. You will recieve answer really soon!</p></div>}
     </div>
   );
 };
