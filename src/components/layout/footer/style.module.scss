@@ -5,15 +5,10 @@
     align-items: center;
     color: #607B96;
     padding: 0 15px;
-    // z-index: 20;
     border: 1px solid #1E2D3D;
-
-
     .footerAll {
         display: flex;
-        // justify-content: space-between;
         align-items: center;
-        // gap: 10px;
         color: #607B96;
 
         p {
@@ -25,10 +20,8 @@
             border-right: 1px solid #1E2D3D;
             border-left: 1px solid #1E2D3D;
             padding: 15px;
-
         }
     }
-
     .footerGit {
 
         p {

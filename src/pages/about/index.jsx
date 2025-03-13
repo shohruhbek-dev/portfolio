@@ -3,12 +3,11 @@ import clsx from "clsx";
 import cn from "./style.module.scss"
 import Dropdown from "../../components/dropdown";
 import { useEffect } from "react";
-
-import Prism from "prismjs"; // If using Prism.js for syntax highlighting
+import Prism from "prismjs"; 
 import "prismjs/themes/prism-tomorrow.css";
 function About() {
     useEffect(() => {
-        Prism.highlightAll(); // Apply syntax highlighting after render
+        Prism.highlightAll(); 
     }, []);
     return (
 

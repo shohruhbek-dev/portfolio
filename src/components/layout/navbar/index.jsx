@@ -22,7 +22,6 @@ function Navbar() {
         };
     }, []);
 
-    // Function to close menu when clicking a link
     const closeMenu = () => setIsOpen(false);
 
     return (
@@ -45,7 +44,6 @@ function Navbar() {
                     <li>
                         <Link to="/projects" onClick={closeMenu}>_projects</Link>
                     </li>
-                    {/* Show headerContacts inside menu when open */}
                     {isOpen && (
                         <li className={clsx(cn["headerContacts"])}>
                             <Link to="/contact" onClick={closeMenu}>_contact-me</Link>
@@ -54,7 +52,6 @@ function Navbar() {
                 </ul>
             </div>
 
-            {/* Show headerContacts only in desktop mode */}
             <div className={clsx(cn["headerContacts"], { [cn["hidden"]]: isOpen })}>
                 <Link to="/contact">_contact-me</Link>
             </div>

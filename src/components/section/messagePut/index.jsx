@@ -17,17 +17,14 @@ const MessageCard = ({ formData, setFormData }) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
 
-    // Reset form after submission
     setFormData({
       name: "",
       email: "",
       message: "",
     });
 
-    // Show success message
     setIsSubmitted(true);
 
-    // Hide success message after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
     }, 3000);

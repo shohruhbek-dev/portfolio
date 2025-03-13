@@ -38,7 +38,7 @@
 
     .contacttop {
         display: flex;
-padding: 0 25px ;
+        padding: 0 25px;
         justify-content: start;
         align-items: center;
         border: 1px solid #1E2D3D;
@@ -64,7 +64,6 @@ padding: 0 25px ;
         grid-row: 2 / 3;
     }
 
-    // 📌 Responsive Styles
     @media (max-width: 1024px) {
         grid-template-columns: auto;
         grid-template-rows: auto auto auto auto;
@@ -88,14 +87,14 @@ padding: 0 25px ;
         .contactCenter1 {
             grid-column: 1 / 2;
             grid-row: 3 / 4;
-            width:auto;
+            width: auto;
         }
 
         .contactCenter2 {
             grid-column: 1 / 2;
             grid-row: 4 / 5;
-            width:auto;
-        }   
+            width: auto;
+        }
     }
 
     @media (max-width: 768px) {
@@ -121,7 +120,7 @@ padding: 0 25px ;
 
         .contactCenter1,
         .contactCenter2 {
-            width:100%;
+            width: 100%;
             text-align: center;
             padding: 20px;
         }
